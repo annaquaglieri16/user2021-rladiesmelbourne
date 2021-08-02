@@ -46,7 +46,7 @@ library(fontawesome)
 
 style_duo_accent(
   primary_color = "#7b8e1f",
-  secondary_color = NULL,
+  secondary_color = "white",
   inverse_header_color = "#290502", 
   link_color = "darkmagenta",
   code_highlight_color = "#add8e6", 
@@ -214,11 +214,13 @@ Artwork by [@allison_horst](https://www.allisonhorst.com/)]
 
 --
 
-- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the [`{iris}` 📦](https://archive.ics.uci.edu/ml/datasets/iris)??!!) 
+- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the [`{iris}` dataset [1]](https://en.wikipedia.org/wiki/Iris_flower_data_set)??!!) 
+
+.footnote[R. A. Fisher (1936). "The use of multiple measurements in taxonomic problems". Annals of Eugenics. 7 (2): 179–188. doi:10.1111/j.1469-1809.1936.tb02137.x. hdl:2440/15227]
 
 ---
 
-## 🐧 `{palmerpenguins}` : An alternative to `{iris}` 📦
+## 🐧 `{palmerpenguins}` is the new `{iris}` 🌷
 
 .pull-left[
 #### Authors: Allison Horst, Alison Hill, Kristen Gorman
