@@ -1,12 +1,7 @@
 ---
-title: "Presentation Ninja"
-subtitle: "&#x2694;&#xFE0F; xaringan +<br/>&#x1F60E; xaringanthemer"  
-author: 
-  - "Yihui Xie"
-  - "Garrick Aden-Buie"
-date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
+    seal: false
     css: xaringan-themer.css
     nature:
       slideNumberFormat: "%current%"
@@ -15,6 +10,18 @@ output:
       ratio: 16:9
       countIncrementalSlides: true
 ---
+
+class: inverse, center, middle
+background-image: url(figures/danielle1.png)
+background-size: cover
+
+# A remote glimpse into the useR! 2021 conference
+
+
+.large[Anna Quaglieri | R-Ladies Melbourne Meetup | 3 Aug 2021]
+
+.left[.footnote[Art by Danielle Navarro, *Silhouette in Teal* (2021) Random walk, flametree L-system]]
+
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -41,20 +48,33 @@ style_duo_accent(
   primary_color = "#7b8e1f",
   secondary_color = "#fcab01",
   inverse_header_color = "#290502", 
-  link_color = "#d2454b",
+  link_color = "darkmagenta",
+  code_highlight_color = "#add8e6", 
+  footnote_color = "black", 
+  footnote_position_bottom = "40px", 
+  footnote_font_size = "0.7em"
 )
 ```
 
+---
 name: intro
 
 ## A bit about me
 
-- Bachelor and Master in Statistics between the Universities of Bologna, Glasgow and Melbourne
+--
+
+Got my Bachelor and Master in Statistics between the Universities of Bologna, Glasgow and Melbourne
+
+.center[<img class="circle" src="figures/uni.png" width="900px" height = "300px"/>]
+
+---
 
 ### A bit of research
 
 - Master research in Population Genetics at the WEHI + worked for 1.5 years as RA
 - PhD in Cancer Genomics at the WEHI
+
+--
 
 ### A bit outside of research
 
@@ -66,8 +86,9 @@ class: center
 
 ## Since two months
 
-I'm a Bioinformatics Data Scientist at [Mass Dynamics](https://www.massdynamics.com/)
+I'm a Bioinformatics Data Scientist at the Melbourne based startup [Mass Dynamics](https://www.massdynamics.com/)
 
+--
 
 .pull-left[
 
@@ -78,6 +99,7 @@ I'm a Bioinformatics Data Scientist at [Mass Dynamics](https://www.massdynamics.
 
 ]
 
+--
 
 .pull-right[
 ![cool](https://media.giphy.com/media/R8afzAVZ1zHjy/giphy.gif)
@@ -89,21 +111,35 @@ name: whatme
 
 ## What I actually do every day 
 
+--
 
-**Work in a fun team**: Work with a fun interdisciplinary team of scientists, developers, marketing savvy.
+🏡💻 **Work in a fun team**: Work with a fun interdisciplinary team of scientists, developers, marketing savvy.
 
-**Learn**: Learn the intricacies and amazingness of mass spectrometry (= most used technique to quantify proteins in a sample) & what life scientists need to make the best use of their experiment.
+--
 
-**Code in R**: Assemble workflows in R to analyse mass spectrometry data.
+📙 **Learn**: Learn the intricacies and amazingness of mass spectrometry (= most used technique to quantify proteins in a sample) & what life scientists need to make the best use of their experiment.
 
-**Open Science**: Learn and strive for reproducibility and openness in what we produce.
+--
 
-**In a nutshell**: Study & Learn, think, build solutions (mainly in R packages)‚ debug, debug, debug, repeat. 
+👩‍💻 **Code in R**: Assemble workflows in R to analyse mass spectrometry data.
+
+--
+
+👐 **Open Science**: Learn and strive for reproducibility and openness in what we produce.
+
+--
+
+🥜 **In a nutshell**: Study & Learn, think, build solutions (mainly in R packages)‚ debug, debug, debug, repeat. 
 
 ---
-class: center, middle, inverse
+class: centre, inverse
+background-image: url(figures/will.png)
+background-size: cover
+
 
 # useR! 2021
+
+.left[.footnote[Art by Will Chase, USA, *Terrazzo, confetti* (2021) Voronoi Tessellation, Poisson disc sampling]]
 
 
 ---
@@ -124,26 +160,38 @@ class: center
 
 ---
 
-# Let's begin!
+# Disclaimer
 
-- **Disclaimer**: My highlights also corresponds to talks presented in our timezone
+- My highlights also corresponds to talks presented in our timezone
+
+--
+
 - All talks and workshops will be made available online very very soon! I'll keep you posted 
+
+.center[![tuned](https://media.giphy.com/media/5bgWSdEyTvPSpXJtNC/giphy.gif)]
 
 ---
 
 # Topics that I will cover
 
-- Teaching and Learning R & Statistics
-- Data visualisation
-- Data Validation and Package Testing
-- R in Production and Package dependencies 
-- Keynote: **Heidi Seibold** on *Research Software Engineers (RSE) & Academia*
-- aRt gallery
+- [Teaching and Learning R & Statistics](#teaching) 
+- [Data visualisation](#viz)
+- [Data Validation and Package Testing](#valid)
+- [Surprise!](#surprise)
+- [Keynote: **Heidi Seibold** on *Research Software Engineers (RSE) & Academia*](#heidi)
+- [R in Production and Package dependencies](#prodr) 
+- [aRt gallery](#art)
 
 ---
-class: inverse, centre, middle
+name: teaching
+class: top
 
 ## Teaching and learning statistics
+
+.centre[<img class="circle" src="figures/penguins.png" width="800px" height = "500px"/>]
+
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)]
 
 ---
 
@@ -154,11 +202,19 @@ class: inverse, centre, middle
 - 🔗[Introduced the `{lterdatasampler}`](https://lter.github.io/lterdatasampler/): LTER Data Sampler 📦 (LTER = Long Term Ecological Research program (LTER) Network)
 - LTER goal is education and training
 
+--
+
 #### Lesson learnt from this talk
 
+- A great way to learn how to build an R 📦 is to create a data-package (package that only includes data)
+
+--
+
 - I don't have super complex, cool new functions... I cannot write an R 📦
-- But! A great way to learn how to build an R 📦 is to create a data-package (package that only includes data)
-- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the `{iris}` 📦??!!) 
+
+--
+
+- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the [`{iris}` 📦](https://archive.ics.uci.edu/ml/datasets/iris)??!!) 
 
 ---
 
@@ -169,7 +225,8 @@ class: inverse, centre, middle
 
 The 🔗[`{palmerpenguins}` 📦](https://allisonhorst.github.io/palmerpenguins/) provides a great dataset for data exploration & visualization, as an alternative to iris. 
 
-```{r}
+```{r eval=FALSE}
+install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
 
@@ -280,7 +337,7 @@ usethis::create_package("/path/to/myPackage")
 ```{r eval=FALSE}
 data_fake <- data.frame(First = seq(1:200), 
                         Second = rep("A", 200))
-usethis::use_data(data_fake)
+usethis::use_data(data_fake) #<<
 ```
 
 .center[![](figures/data-setup.png)]
@@ -298,13 +355,19 @@ usethis::use_data(data_fake)
 
 ## `{fusen}` 📦: Create a package from Rmd
 
+--
+
 #### Speaker and author: Sébastien Rochette
 
 > If you know how to create a Rmarkdown file, then you know how to build a package.
 
 #### 🔗[Introduction to `{fusen}` ](https://thinkr-open.github.io/fusen/)
 
-**Philosophy** You don't need to move around functions and files to create a package, you oly need your Rmd with functions, documentation, tests, examples. 
+--
+
+**Philosophy** You don't need to move around functions and files to create a package, you only need your Rmd with functions, documentation, tests, examples. 
+
+--
 
 .pull-left[
 ```{r eval=FALSE, echo=TRUE}
@@ -347,8 +410,8 @@ library(fusen)
 
 #### Speaker: Cetinkaya-Rundel, Mine
 
-- 🔗[OpeenIntro website](https://www.openintro.org/) has loads of resources to teach and learn statistics (for free!)
-- 🔗[OpeenIntro R 📦](https://github.com/OpenIntroStat/openintro) has supplemental functions and data for OpenIntro resources.
+- 🔗[OpenIntro website](https://www.openintro.org/) has loads of resources to teach and learn statistics (for free!)
+- 🔗[OpenIntro R 📦](https://github.com/OpenIntroStat/openintro) has supplemental functions and data for OpenIntro resources.
 
 .pull-left[
 .center[<img class="circle" src="figures/openintro.png" width="800px" height = "300px"/>]
@@ -388,9 +451,14 @@ library(fusen)
 
 
 ---
-class: inverse, centre, middle
+class: top, middle
+background-image: url(figures/iema.png)
+name: viz
 
 ## Data Visualisation
+
+.left[.footnote[Art by Ijeamaka Anyene, USA, *Sunset* (2021)]]
+
 
 ---
 
@@ -411,9 +479,9 @@ class: inverse, centre, middle
 
 ---
 
-## Gradient fills
+## 🔗[Paul Murrel's New Features in the R Graphics Engine](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
 
-🔗[Paul Murrel's New Features in the R Graphics Engine](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
+### Gradient and radial fill
 
 ```{r}
 library(grid)
@@ -434,7 +502,7 @@ library(grid)
 
 ---
 
-## Pattern fills
+### Pattern fills
 
 ```{r}
 library(grid)
@@ -464,8 +532,16 @@ You can build illustrator like viz!
 
 🔗[Introduction to `virgo`](https://vegawidget.github.io/virgo/)
 
+--
+
 - Allows to easily build interactive graphics for exploratory data analysis
+
+--
+
 - Allows cross interactivity between plots without having to build a Shiny app
+
+--
+
 - `virgo` plots also works within Shiny
 
 ---
@@ -581,8 +657,14 @@ Total of 30 available colours per palette.
 
 ---
 class: inverse, centre, middle
+name: valid
+background-image: url(figures/antonio.png)
+background-size: cover
 
 ## Data validation and Unit testing
+
+.left[.footnote[Art by Antonio Sánchez, Spain, *Jellyfish* (2018), Sines and cosines]]
+
 
 ---
 
@@ -597,7 +679,12 @@ class: inverse, centre, middle
 install.packages("autotest")
 ```
 
+--
+
 - `{autotest}` goes into the examples of your R 📦 functions and *mutates* (aka changes) the inputs parameters to function calls.
+
+--
+
 - This allows to check for robustness of the package to several inputs
 
 ---
@@ -623,7 +710,7 @@ y <- autotest_package(package = "stats", functions = "var", test = TRUE)
 
 ## A fresh look at unit testing with `{tinytest}` 📦
 
-.pull-lrft[
+.pull-left[
 #### Speaker and author: Mark van der Loo
 
 🔗[Introduction to `{tinytest}` `r fa(name = "github")`](https://github.com/markvanderloo/tinytest)
@@ -632,14 +719,15 @@ y <- autotest_package(package = "stats", functions = "var", test = TRUE)
 install.packages("tinytest")
 ```
 
-
 - The purpose is to facilitate the development of unit testing of R 📦
+
 - It provides you with better stats and ideas where the errors actually occurred
 ]
 
+--
 
 .pull-right[
-![](figures/tinytest.png)
+.center[<img class="circle" src="figures/tinytest.png" width="400px" height = "400px"/>]
 ]
 
 .footnote[
@@ -660,11 +748,16 @@ library(tinytest)
 
 addOne <- function(x) x + 1
 subOne <- function(x) x - 2
+```
 
+--
+
+```{r}
 # this test should pass
 tinytest::expect_equal(addOne(1), 2 )
 ```
 
+--
 
 ```{r}
 # this test will fail
@@ -709,9 +802,17 @@ table(penguins$island, penguins$species)
 
 ---
 
+#### Create a `validator` with rules
+
+--
+
 - Separate multiple validations by a comma
 
+--
+
 - The example shows multivariate validation including completeness validation (`is_complete`) and conditional validations.
+
+--
 
 ```{r}
 library(validate)
@@ -721,25 +822,35 @@ rules <- validator(flipper_length_mm > 0,
            is_complete(bill_depth_mm, flipper_length_mm, bill_depth_mm), 
            
            if(island %in% "Biscoe") species %in% c("Adelie"))
-confront(penguins, rules) %>% summary()
 ```
 
+--
 
-.footnote[The Data Validation Cookbook: https://data-cleaning.github.io/validate/]
+```{r}
+confront(penguins, rules) %>% summary()
+```
 
 
 
 ---
 class: center, middle, inverse
+name: surprise
+background-image: url(figures/will-chase2.png)
+background-size: cover
 
 # Teasing your appetite for next month R-Ladies Melbourne event
 
 # Spoiler Alert!
 
+.left[.footnote[Art by Will Chase, USA, *Triangle disintegration* (2019), Curl noise, trigonometry]]
+
+
 ---
 
 
 ## Here is the anomalous-down! 
+
+--
 
 .pull-left[
 
@@ -755,16 +866,25 @@ R packages that Sevvandi developed to find anomalies in high-dimensional data:
 
 ]
 
+--
+
 .pull-right[
 .center[![soon](https://media.giphy.com/media/fUYp0iOzQfC540KCs4/giphy.gif)]
 ]
 
 
 ---
-class: center, middle, inverse
+class: centre, inverse
+name: heidi
+background-image: url(figures/iema3.png)
+background-size: cover
+
+.left[.footnote[Art by Ijeamaka Anyene, USA, *Clouds* (2021)]]
+
 
 # Keynote: Heidi Seibold
 # Research Software Engineers (RSE) & Academia
+
 
 ---
 
@@ -796,12 +916,22 @@ background-image: url(figures/open-stories.png)
 
 ---
 
+### What does an RSE do?
+
 - An RSE builds software for research 
+
+--
+
 - Generally writes code and teaches about software to researchers 
+
+--
+
 - Consult researcher with any kind of software problem
 
+--
 
-.center[<img class="circle" src="figures/rse-dos.png" width="650px" height = "500px"/>]
+
+.center[<img class="circle" src="figures/rse-dos.png" width="550px" height = "400px"/>]
 
 
 ---
@@ -810,7 +940,9 @@ background-image: url(figures/open-stories.png)
 
 It's a bit too much to expect that the researcher would do all of those things + their research!
 
-.center[<img class="circle" src="figures/toold-open-science.png" width="670px" height = "500px"/>]
+The RSE comes to help!
+
+.center[<img class="circle" src="figures/toold-open-science.png" width="570px" height = "400px"/>]
 
 ---
 
@@ -822,16 +954,13 @@ You can become part of the community!
 
 
 ---
-background-image: url(figures/thoams.png)
+class: center, middle, inverse
+name: prodr
+background-image: url(figures/will-chase3.png)
 background-size: cover
 
-# .center[[aRt gallery](https://user_2021.gitlab.io/user2021_art_gallery/#46)]
+.left[.footnote[Art by Will Chase, USA, *Bubble strings* (2021), Flow fields, circle packing, perlin noise]]
 
-.footnote[*Yonder 1831*, 2021 by Thomas Lin Pedersen (Denmark). Flow lines, nearest neighbour, texture blending*]
-
-
----
-class: center, middle, inverse
 
 # R in production
 
@@ -844,7 +973,7 @@ Example from my experience.
 
 --
 
-- But, Mass Dynamics wants to make the functionalities of the R packages easily available also to 👩‍🔬  life scientist who cannot code  
+- But, Mass Dynamics wants to make the functionalities of the R packages easily available also to 👩‍🔬  life scientist, reducing the barrier of having to learn to code  
 
 --
 
@@ -860,12 +989,25 @@ Example from my experience.
 
 There is a bit of engineering setup and jargon to digest & there are various of way of accomplishing this task!
 
+--
+
 Tricky aspects:
 
+--
+
 - A lot of aspects are around the engineering setup (which is not my expertise!)
+
+--
+
 - However, from my side I need to make sure that:
   - all dependencies needed by my R packages are available in production
+  
+--
+
   - all packages are put into production with a defined version to allow *reproducibility*
+  
+--
+
   - Managing dependencies can be really tricky!
     - How do you know all that you need, when a package will depends on another package, and anothe rpackage will depend on another one etc...
 
@@ -873,7 +1015,9 @@ Tricky aspects:
 
 ## What are package dependencies?
 
-You find them in the `DESCRIPTION` file of a package, diguising under:
+--
+
+You find them in the `DESCRIPTION` file of a package, disguising under:
 
 - `Depends`, `Imports`, `SystemRequirements` (dependencies external from R)
 
@@ -883,7 +1027,7 @@ You find them in the `DESCRIPTION` file of a package, diguising under:
 
 ## How to find them all?
 
-How do you determine all the dependencies of an R package/project to make it reporodcible, open, shareable, safe for production?
+How do you determine all the dependencies needed to reproduce an R package/project environment to make it reporodcible, open, shareable, safe for production?
 
 My summary of suggestions after discussing with speakers at useR! 2021:
 
@@ -944,6 +1088,16 @@ Phylosphy: Wrapping up everything with Docker 🐳 and using [`{plumber}` 📦](
 .center[<img class="circle" src="figures/suryas-approach.png" width="670px" height = "350px"/>]
 
 ---
+background-image: url(figures/thoams.png)
+background-size: cover
+class: center, middle
+name: art
+
+# [aRt gallery](https://user_2021.gitlab.io/user2021_art_gallery/#46)
+
+.left[.footnote[*Yonder 1831*, 2021 by Thomas Lin Pedersen (Denmark). Flow lines, nearest neighbour, texture blending]]
+
+---
 
 ## Thanks to
 
@@ -951,3 +1105,54 @@ Phylosphy: Wrapping up everything with Docker 🐳 and using [`{plumber}` 📦](
 - Mass Dynamics for letting me take part to the conference
 - [`Meet Xaringan: Making slides in R Markdown`](https://arm.rbind.io/slides/xaringan.html#1) by Alison Hill, learn how to make beautiful slides using `{xaringan}`.
 - These slides were created using the `{xaringan}` 📦 by Yihui Xie (2021). xaringan: Presentation Ninja. R package version 0.22. https://CRAN.R-project.org/package=xaringan 
+- Shazia Ruybal [Xaringan's slides from her previous R-Ladies Melbourne talk](https://github.com/shaziaruybal) for examples
+
+---
+
+## Glossary of R packages mentioned
+
+.pull-left[
+#### Teaching and Learning R & Statistics
+- [`{lterdatasampler}`](https://lter.github.io/lterdatasampler/)
+- [`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/)
+- [`{usethis}`](https://usethis.r-lib.org/)
+- [`{fusen}`](https://thinkr-open.github.io/fusen/)
+- [`{OpenIntro}`](https://github.com/OpenIntroStat/openintro)
+- [`{bayesrules}`](https://github.com/bayes-rules/bayesrules)
+
+#### Data visualisation
+- [`{grid}`](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
+- [`{virgo}`](https://vegawidget.github.io/virgo/)
+- [`{microshades}`](https://github.com/KarstensLab/microshades)
+]
+
+.pull-right[
+#### Data Validation and Package Testing
+- [`{autotest}`](https://github.com/ropensci-review-tools/autotest)
+- [`{tinytest}`](https://github.com/markvanderloo/tinytest)
+- [`{validate}`](https://github.com/data-cleaning/validate)
+
+#### Next month surprise!
+- [`{dobin}`](https://github.com/sevvandi/dobin)
+- [`{lookout}`](https://github.com/sevvandi/lookout)
+
+#### Manage package dependencies
+- [`{renv}`](https://rstudio.github.io/renv/articles/renv.html)
+- [`{sysreqs}`](https://github.com/r-hub/sysreqs)
+- [`{maktools}`](https://cran.r-project.org/web/packages/maketools/vignettes/sysdeps.html)
+]
+
+
+---
+class: top, middle
+background-image: url(figures/iema4.png)
+
+.footnote[Art by Ijeamaka Anyene, USA, *Arcs IV* (2020)]
+
+
+# Any question?
+
+You can fine me at:
+
+- [`r fa(name = "twitter")` @annaquagli](https://twitter.com/annaquagli)
+- [`r fa(name = "github")` @annaquaglieri16](https://github.com/annaquaglieri16) 

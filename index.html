@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Presentation Ninja</title>
+    <title>index.knit</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Yihui Xie" />
-    <meta name="author" content="Garrick Aden-Buie" />
-    <meta name="date" content="2021-08-02" />
     <script src="index_files/header-attrs/header-attrs.js"></script>
     <script src="index_files/htmlwidgets/htmlwidgets.js"></script>
     <script src="index_files/vega/vega.min.js"></script>
@@ -17,31 +14,43 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
 
-# Presentation Ninja
-## ⚔️ xaringan +<br/>😎 xaringanthemer
-### Yihui Xie
-### Garrick Aden-Buie
-### 2021-08-02
+
+class: inverse, center, middle
+background-image: url(figures/danielle1.png)
+background-size: cover
+
+# A remote glimpse into the useR! 2021 conference
+
+
+.large[Anna Quaglieri | R-Ladies Melbourne Meetup | 3 Aug 2021]
+
+.left[.footnote[Art by Danielle Navarro, *Silhouette in Teal* (2021) Random walk, flametree L-system]]
+
+
+
+
+
 
 ---
-
-
-
-
-
-
 name: intro
 
 ## A bit about me
 
-- Bachelor and Master in Statistics between the Universities of Bologna, Glasgow and Melbourne
+--
+
+Got my Bachelor and Master in Statistics between the Universities of Bologna, Glasgow and Melbourne
+
+.center[&lt;img class="circle" src="figures/uni.png" width="900px" height = "300px"/&gt;]
+
+---
 
 ### A bit of research
 
 - Master research in Population Genetics at the WEHI + worked for 1.5 years as RA
 - PhD in Cancer Genomics at the WEHI
+
+--
 
 ### A bit outside of research
 
@@ -53,8 +62,9 @@ class: center
 
 ## Since two months
 
-I'm a Bioinformatics Data Scientist at [Mass Dynamics](https://www.massdynamics.com/)
+I'm a Bioinformatics Data Scientist at the Melbourne based startup [Mass Dynamics](https://www.massdynamics.com/)
 
+--
 
 .pull-left[
 
@@ -65,6 +75,7 @@ I'm a Bioinformatics Data Scientist at [Mass Dynamics](https://www.massdynamics.
 
 ]
 
+--
 
 .pull-right[
 ![cool](https://media.giphy.com/media/R8afzAVZ1zHjy/giphy.gif)
@@ -76,21 +87,35 @@ name: whatme
 
 ## What I actually do every day 
 
+--
 
-**Work in a fun team**: Work with a fun interdisciplinary team of scientists, developers, marketing savvy.
+🏡💻 **Work in a fun team**: Work with a fun interdisciplinary team of scientists, developers, marketing savvy.
 
-**Learn**: Learn the intricacies and amazingness of mass spectrometry (= most used technique to quantify proteins in a sample) &amp; what life scientists need to make the best use of their experiment.
+--
 
-**Code in R**: Assemble workflows in R to analyse mass spectrometry data.
+📙 **Learn**: Learn the intricacies and amazingness of mass spectrometry (= most used technique to quantify proteins in a sample) &amp; what life scientists need to make the best use of their experiment.
 
-**Open Science**: Learn and strive for reproducibility and openness in what we produce.
+--
 
-**In a nutshell**: Study &amp; Learn, think, build solutions (mainly in R packages)‚ debug, debug, debug, repeat. 
+👩‍💻 **Code in R**: Assemble workflows in R to analyse mass spectrometry data.
+
+--
+
+👐 **Open Science**: Learn and strive for reproducibility and openness in what we produce.
+
+--
+
+🥜 **In a nutshell**: Study &amp; Learn, think, build solutions (mainly in R packages)‚ debug, debug, debug, repeat. 
 
 ---
-class: center, middle, inverse
+class: centre, inverse
+background-image: url(figures/will.png)
+background-size: cover
+
 
 # useR! 2021
+
+.left[.footnote[Art by Will Chase, USA, *Terrazzo, confetti* (2021) Voronoi Tessellation, Poisson disc sampling]]
 
 
 ---
@@ -111,26 +136,38 @@ class: center
 
 ---
 
-# Let's begin!
+# Disclaimer
 
-- **Disclaimer**: My highlights also corresponds to talks presented in our timezone
+- My highlights also corresponds to talks presented in our timezone
+
+--
+
 - All talks and workshops will be made available online very very soon! I'll keep you posted 
+
+.center[![tuned](https://media.giphy.com/media/5bgWSdEyTvPSpXJtNC/giphy.gif)]
 
 ---
 
 # Topics that I will cover
 
-- Teaching and Learning R &amp; Statistics
-- Data visualisation
-- Data Validation and Package Testing
-- R in Production and Package dependencies 
-- Keynote: **Heidi Seibold** on *Research Software Engineers (RSE) &amp; Academia*
-- aRt gallery
+- [Teaching and Learning R &amp; Statistics](#teaching) 
+- [Data visualisation](#viz)
+- [Data Validation and Package Testing](#valid)
+- [Surprise!](#surprise)
+- [Keynote: **Heidi Seibold** on *Research Software Engineers (RSE) &amp; Academia*](#heidi)
+- [R in Production and Package dependencies](#prodr) 
+- [aRt gallery](#art)
 
 ---
-class: inverse, centre, middle
+name: teaching
+class: top
 
 ## Teaching and learning statistics
+
+.centre[&lt;img class="circle" src="figures/penguins.png" width="800px" height = "500px"/&gt;]
+
+.footnote[
+Artwork by [@allison_horst](https://www.allisonhorst.com/)]
 
 ---
 
@@ -141,11 +178,19 @@ class: inverse, centre, middle
 - 🔗[Introduced the `{lterdatasampler}`](https://lter.github.io/lterdatasampler/): LTER Data Sampler 📦 (LTER = Long Term Ecological Research program (LTER) Network)
 - LTER goal is education and training
 
+--
+
 #### Lesson learnt from this talk
 
+- A great way to learn how to build an R 📦 is to create a data-package (package that only includes data)
+
+--
+
 - I don't have super complex, cool new functions... I cannot write an R 📦
-- But! A great way to learn how to build an R 📦 is to create a data-package (package that only includes data)
-- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the `{iris}` 📦??!!) 
+
+--
+
+- Free gift! Data packages are an enormously useful tool for teaching purposes (how many times have you used the [`{iris}` 📦](https://archive.ics.uci.edu/ml/datasets/iris)??!!) 
 
 ---
 
@@ -158,6 +203,7 @@ The 🔗[`{palmerpenguins}` 📦](https://allisonhorst.github.io/palmerpenguins/
 
 
 ```r
+install.packages("palmerpenguins")
 library(palmerpenguins)
 ```
 
@@ -266,7 +312,7 @@ usethis::create_package("/path/to/myPackage")
 ```r
 data_fake &lt;- data.frame(First = seq(1:200), 
                         Second = rep("A", 200))
-usethis::use_data(data_fake)
+*usethis::use_data(data_fake)
 ```
 
 .center[![](figures/data-setup.png)]
@@ -284,13 +330,19 @@ usethis::use_data(data_fake)
 
 ## `{fusen}` 📦: Create a package from Rmd
 
+--
+
 #### Speaker and author: Sébastien Rochette
 
 &gt; If you know how to create a Rmarkdown file, then you know how to build a package.
 
 #### 🔗[Introduction to `{fusen}` ](https://thinkr-open.github.io/fusen/)
 
-**Philosophy** You don't need to move around functions and files to create a package, you oly need your Rmd with functions, documentation, tests, examples. 
+--
+
+**Philosophy** You don't need to move around functions and files to create a package, you only need your Rmd with functions, documentation, tests, examples. 
+
+--
 
 .pull-left[
 
@@ -334,8 +386,8 @@ library(fusen)
 
 #### Speaker: Cetinkaya-Rundel, Mine
 
-- 🔗[OpeenIntro website](https://www.openintro.org/) has loads of resources to teach and learn statistics (for free!)
-- 🔗[OpeenIntro R 📦](https://github.com/OpenIntroStat/openintro) has supplemental functions and data for OpenIntro resources.
+- 🔗[OpenIntro website](https://www.openintro.org/) has loads of resources to teach and learn statistics (for free!)
+- 🔗[OpenIntro R 📦](https://github.com/OpenIntroStat/openintro) has supplemental functions and data for OpenIntro resources.
 
 .pull-left[
 .center[&lt;img class="circle" src="figures/openintro.png" width="800px" height = "300px"/&gt;]
@@ -375,9 +427,14 @@ library(fusen)
 
 
 ---
-class: inverse, centre, middle
+class: top, middle
+background-image: url(figures/iema.png)
+name: viz
 
 ## Data Visualisation
+
+.left[.footnote[Art by Ijeamaka Anyene, USA, *Sunset* (2021)]]
+
 
 ---
 
@@ -398,9 +455,9 @@ class: inverse, centre, middle
 
 ---
 
-## Gradient fills
+## 🔗[Paul Murrel's New Features in the R Graphics Engine](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
 
-🔗[Paul Murrel's New Features in the R Graphics Engine](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
+### Gradient and radial fill
 
 
 ```r
@@ -422,7 +479,7 @@ library(grid)
 
 ---
 
-## Pattern fills
+### Pattern fills
 
 
 ```r
@@ -453,8 +510,16 @@ You can build illustrator like viz!
 
 🔗[Introduction to `virgo`](https://vegawidget.github.io/virgo/)
 
+--
+
 - Allows to easily build interactive graphics for exploratory data analysis
+
+--
+
 - Allows cross interactivity between plots without having to build a Shiny app
+
+--
+
 - `virgo` plots also works within Shiny
 
 ---
@@ -494,8 +559,8 @@ p &lt;- penguins %&gt;%
 p
 ```
 
-<div id="htmlwidget-d157b685bd8913e9f6c4" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d157b685bd8913e9f6c4">{"x":{
+<div id="htmlwidget-7c68316310412fd4ed70" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7c68316310412fd4ed70">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "data": {
@@ -4261,7 +4326,7 @@ p
     "layer": [
       {
         "selection": {
-          "idf32ec5d5": {
+          "id2248e9d2": {
             "type": "interval",
             "encodings": ["x", "y"],
             "init": null,
@@ -4302,7 +4367,7 @@ p
           },
           "color": {
             "condition": {
-              "selection": "idf32ec5d5",
+              "selection": "id2248e9d2",
               "field": "species",
               "type": "nominal",
               "sort": ["Adelie", "Chinstrap", "Gentoo"],
@@ -4417,8 +4482,8 @@ p_right &lt;- penguins %&gt;%
 p_right
 ```
 
-<div id="htmlwidget-ab23d8cf96b898440358" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ab23d8cf96b898440358">{"x":{
+<div id="htmlwidget-9811e33987ffd7c39762" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9811e33987ffd7c39762">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "data": {
@@ -7869,7 +7934,7 @@ p_right
           }
         },
         "selection": {
-          "idf32ec5d5": {
+          "id2248e9d2": {
             "type": "interval",
             "encodings": ["x", "y"],
             "init": null,
@@ -7893,7 +7958,7 @@ p_right
         "transform": [
           {
             "filter": {
-              "selection": "idf32ec5d5"
+              "selection": "id2248e9d2"
             }
           }
         ],
@@ -7931,7 +7996,7 @@ p_right
         "transform": [
           {
             "filter": {
-              "selection": "idf32ec5d5"
+              "selection": "id2248e9d2"
             }
           }
         ],
@@ -8035,8 +8100,8 @@ p_right
 hconcat(p, p_right)
 ```
 
-<div id="htmlwidget-7dca8cf8853dca920283" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7dca8cf8853dca920283">{"x":{
+<div id="htmlwidget-2dca5725cf3d34459dc2" style="width:auto;height:auto;" class="vegawidget html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2dca5725cf3d34459dc2">{"x":{
   "chart_spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
     "hconcat": [
@@ -11804,7 +11869,7 @@ hconcat(p, p_right)
         "layer": [
           {
             "selection": {
-              "idf32ec5d5": {
+              "id2248e9d2": {
                 "type": "interval",
                 "encodings": ["x", "y"],
                 "init": null,
@@ -11845,7 +11910,7 @@ hconcat(p, p_right)
               },
               "color": {
                 "condition": {
-                  "selection": "idf32ec5d5",
+                  "selection": "id2248e9d2",
                   "field": "species",
                   "type": "nominal",
                   "sort": ["Adelie", "Chinstrap", "Gentoo"],
@@ -15309,7 +15374,7 @@ hconcat(p, p_right)
               }
             },
             "selection": {
-              "idf32ec5d5": {
+              "id2248e9d2": {
                 "type": "interval",
                 "encodings": ["x", "y"],
                 "init": null,
@@ -15333,7 +15398,7 @@ hconcat(p, p_right)
             "transform": [
               {
                 "filter": {
-                  "selection": "idf32ec5d5"
+                  "selection": "id2248e9d2"
                 }
               }
             ],
@@ -15371,7 +15436,7 @@ hconcat(p, p_right)
             "transform": [
               {
                 "filter": {
-                  "selection": "idf32ec5d5"
+                  "selection": "id2248e9d2"
                 }
               }
             ],
@@ -15511,8 +15576,14 @@ Total of 30 available colours per palette.
 
 ---
 class: inverse, centre, middle
+name: valid
+background-image: url(figures/antonio.png)
+background-size: cover
 
 ## Data validation and Unit testing
+
+.left[.footnote[Art by Antonio Sánchez, Spain, *Jellyfish* (2018), Sines and cosines]]
+
 
 ---
 
@@ -15528,7 +15599,12 @@ class: inverse, centre, middle
 install.packages("autotest")
 ```
 
+--
+
 - `{autotest}` goes into the examples of your R 📦 functions and *mutates* (aka changes) the inputs parameters to function calls.
+
+--
+
 - This allows to check for robustness of the package to several inputs
 
 ---
@@ -15555,7 +15631,7 @@ y &lt;- autotest_package(package = "stats", functions = "var", test = TRUE)
 
 ## A fresh look at unit testing with `{tinytest}` 📦
 
-.pull-lrft[
+.pull-left[
 #### Speaker and author: Mark van der Loo
 
 🔗[Introduction to `{tinytest}` <svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>](https://github.com/markvanderloo/tinytest)
@@ -15565,14 +15641,15 @@ y &lt;- autotest_package(package = "stats", functions = "var", test = TRUE)
 install.packages("tinytest")
 ```
 
-
 - The purpose is to facilitate the development of unit testing of R 📦
+
 - It provides you with better stats and ideas where the errors actually occurred
 ]
 
+--
 
 .pull-right[
-![](figures/tinytest.png)
+.center[&lt;img class="circle" src="figures/tinytest.png" width="400px" height = "400px"/&gt;]
 ]
 
 .footnote[
@@ -15594,7 +15671,12 @@ library(tinytest)
 
 addOne &lt;- function(x) x + 1
 subOne &lt;- function(x) x - 2
+```
 
+--
+
+
+```r
 # this test should pass
 tinytest::expect_equal(addOne(1), 2 )
 ```
@@ -15604,6 +15686,7 @@ tinytest::expect_equal(addOne(1), 2 )
 ##  call| tinytest::expect_equal(addOne(1), 2)
 ```
 
+--
 
 
 ```r
@@ -15677,9 +15760,17 @@ table(penguins$island, penguins$species)
 
 ---
 
+#### Create a `validator` with rules
+
+--
+
 - Separate multiple validations by a comma
 
+--
+
 - The example shows multivariate validation including completeness validation (`is_complete`) and conditional validations.
+
+--
 
 
 ```r
@@ -15690,6 +15781,12 @@ rules &lt;- validator(flipper_length_mm &gt; 0,
            is_complete(bill_depth_mm, flipper_length_mm, bill_depth_mm), 
            
            if(island %in% "Biscoe") species %in% c("Adelie"))
+```
+
+--
+
+
+```r
 confront(penguins, rules) %&gt;% summary()
 ```
 
@@ -15701,21 +15798,26 @@ confront(penguins, rules) %&gt;% summary()
 ```
 
 
-.footnote[The Data Validation Cookbook: https://data-cleaning.github.io/validate/]
-
-
 
 ---
 class: center, middle, inverse
+name: surprise
+background-image: url(figures/will-chase2.png)
+background-size: cover
 
 # Teasing your appetite for next month R-Ladies Melbourne event
 
 # Spoiler Alert!
 
+.left[.footnote[Art by Will Chase, USA, *Triangle disintegration* (2019), Curl noise, trigonometry]]
+
+
 ---
 
 
 ## Here is the anomalous-down! 
+
+--
 
 .pull-left[
 
@@ -15731,16 +15833,25 @@ R packages that Sevvandi developed to find anomalies in high-dimensional data:
 
 ]
 
+--
+
 .pull-right[
 .center[![soon](https://media.giphy.com/media/fUYp0iOzQfC540KCs4/giphy.gif)]
 ]
 
 
 ---
-class: center, middle, inverse
+class: centre, inverse
+name: heidi
+background-image: url(figures/iema3.png)
+background-size: cover
+
+.left[.footnote[Art by Ijeamaka Anyene, USA, *Clouds* (2021)]]
+
 
 # Keynote: Heidi Seibold
 # Research Software Engineers (RSE) &amp; Academia
+
 
 ---
 
@@ -15772,12 +15883,22 @@ background-image: url(figures/open-stories.png)
 
 ---
 
+### What does an RSE do?
+
 - An RSE builds software for research 
+
+--
+
 - Generally writes code and teaches about software to researchers 
+
+--
+
 - Consult researcher with any kind of software problem
 
+--
 
-.center[&lt;img class="circle" src="figures/rse-dos.png" width="650px" height = "500px"/&gt;]
+
+.center[&lt;img class="circle" src="figures/rse-dos.png" width="550px" height = "400px"/&gt;]
 
 
 ---
@@ -15786,7 +15907,9 @@ background-image: url(figures/open-stories.png)
 
 It's a bit too much to expect that the researcher would do all of those things + their research!
 
-.center[&lt;img class="circle" src="figures/toold-open-science.png" width="670px" height = "500px"/&gt;]
+The RSE comes to help!
+
+.center[&lt;img class="circle" src="figures/toold-open-science.png" width="570px" height = "400px"/&gt;]
 
 ---
 
@@ -15798,16 +15921,13 @@ You can become part of the community!
 
 
 ---
-background-image: url(figures/thoams.png)
+class: center, middle, inverse
+name: prodr
+background-image: url(figures/will-chase3.png)
 background-size: cover
 
-# .center[[aRt gallery](https://user_2021.gitlab.io/user2021_art_gallery/#46)]
+.left[.footnote[Art by Will Chase, USA, *Bubble strings* (2021), Flow fields, circle packing, perlin noise]]
 
-.footnote[*Yonder 1831*, 2021 by Thomas Lin Pedersen (Denmark). Flow lines, nearest neighbour, texture blending*]
-
-
----
-class: center, middle, inverse
 
 # R in production
 
@@ -15820,7 +15940,7 @@ Example from my experience.
 
 --
 
-- But, Mass Dynamics wants to make the functionalities of the R packages easily available also to 👩‍🔬  life scientist who cannot code  
+- But, Mass Dynamics wants to make the functionalities of the R packages easily available also to 👩‍🔬  life scientist, reducing the barrier of having to learn to code  
 
 --
 
@@ -15836,12 +15956,25 @@ Example from my experience.
 
 There is a bit of engineering setup and jargon to digest &amp; there are various of way of accomplishing this task!
 
+--
+
 Tricky aspects:
 
+--
+
 - A lot of aspects are around the engineering setup (which is not my expertise!)
+
+--
+
 - However, from my side I need to make sure that:
   - all dependencies needed by my R packages are available in production
+  
+--
+
   - all packages are put into production with a defined version to allow *reproducibility*
+  
+--
+
   - Managing dependencies can be really tricky!
     - How do you know all that you need, when a package will depends on another package, and anothe rpackage will depend on another one etc...
 
@@ -15849,7 +15982,9 @@ Tricky aspects:
 
 ## What are package dependencies?
 
-You find them in the `DESCRIPTION` file of a package, diguising under:
+--
+
+You find them in the `DESCRIPTION` file of a package, disguising under:
 
 - `Depends`, `Imports`, `SystemRequirements` (dependencies external from R)
 
@@ -15859,7 +15994,7 @@ You find them in the `DESCRIPTION` file of a package, diguising under:
 
 ## How to find them all?
 
-How do you determine all the dependencies of an R package/project to make it reporodcible, open, shareable, safe for production?
+How do you determine all the dependencies needed to reproduce an R package/project environment to make it reporodcible, open, shareable, safe for production?
 
 My summary of suggestions after discussing with speakers at useR! 2021:
 
@@ -15928,6 +16063,16 @@ Phylosphy: Wrapping up everything with Docker 🐳 and using [`{plumber}` 📦](
 .center[&lt;img class="circle" src="figures/suryas-approach.png" width="670px" height = "350px"/&gt;]
 
 ---
+background-image: url(figures/thoams.png)
+background-size: cover
+class: center, middle
+name: art
+
+# [aRt gallery](https://user_2021.gitlab.io/user2021_art_gallery/#46)
+
+.left[.footnote[*Yonder 1831*, 2021 by Thomas Lin Pedersen (Denmark). Flow lines, nearest neighbour, texture blending]]
+
+---
 
 ## Thanks to
 
@@ -15935,6 +16080,57 @@ Phylosphy: Wrapping up everything with Docker 🐳 and using [`{plumber}` 📦](
 - Mass Dynamics for letting me take part to the conference
 - [`Meet Xaringan: Making slides in R Markdown`](https://arm.rbind.io/slides/xaringan.html#1) by Alison Hill, learn how to make beautiful slides using `{xaringan}`.
 - These slides were created using the `{xaringan}` 📦 by Yihui Xie (2021). xaringan: Presentation Ninja. R package version 0.22. https://CRAN.R-project.org/package=xaringan 
+- Shazia Ruybal [Xaringan's slides from her previous R-Ladies Melbourne talk](https://github.com/shaziaruybal) for examples
+
+---
+
+## Glossary of R packages mentioned
+
+.pull-left[
+#### Teaching and Learning R &amp; Statistics
+- [`{lterdatasampler}`](https://lter.github.io/lterdatasampler/)
+- [`{palmerpenguins}`](https://allisonhorst.github.io/palmerpenguins/)
+- [`{usethis}`](https://usethis.r-lib.org/)
+- [`{fusen}`](https://thinkr-open.github.io/fusen/)
+- [`{OpenIntro}`](https://github.com/OpenIntroStat/openintro)
+- [`{bayesrules}`](https://github.com/bayes-rules/bayesrules)
+
+#### Data visualisation
+- [`{grid}`](https://developer.r-project.org/Blog/public/2020/07/15/new-features-in-the-r-graphics-engine/)
+- [`{virgo}`](https://vegawidget.github.io/virgo/)
+- [`{microshades}`](https://github.com/KarstensLab/microshades)
+]
+
+.pull-right[
+#### Data Validation and Package Testing
+- [`{autotest}`](https://github.com/ropensci-review-tools/autotest)
+- [`{tinytest}`](https://github.com/markvanderloo/tinytest)
+- [`{validate}`](https://github.com/data-cleaning/validate)
+
+#### Next month surprise!
+- [`{dobin}`](https://github.com/sevvandi/dobin)
+- [`{lookout}`](https://github.com/sevvandi/lookout)
+
+#### Manage package dependencies
+- [`{renv}`](https://rstudio.github.io/renv/articles/renv.html)
+- [`{sysreqs}`](https://github.com/r-hub/sysreqs)
+- [`{maktools}`](https://cran.r-project.org/web/packages/maketools/vignettes/sysdeps.html)
+]
+
+
+---
+class: top, middle
+background-image: url(figures/iema4.png)
+
+.footnote[Art by Ijeamaka Anyene, USA, *Arcs IV* (2020)]
+
+
+# Any question?
+
+You can fine me at:
+
+- [<svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> @annaquagli](https://twitter.com/annaquagli)
+- [<svg aria-hidden="true" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @annaquaglieri16](https://github.com/annaquaglieri16) 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

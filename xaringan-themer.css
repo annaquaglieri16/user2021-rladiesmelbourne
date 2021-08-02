@@ -46,13 +46,13 @@
   --text-color: #000000;
   --header-color: #7b8e1f;
   --background-color: #FFFFFF;
-  --link-color: #d2454b;
+  --link-color: darkmagenta;
   --text-bold-color: #7b8e1f;
-  --code-highlight-color: rgba(255,255,0,0.5);
+  --code-highlight-color: #add8e6;
   --inverse-text-color: #000000;
   --inverse-background-color: #fcab01;
   --inverse-header-color: #290502;
-  --inverse-link-color: #d2454b;
+  --inverse-link-color: darkmagenta;
   --title-slide-background-color: #7b8e1f;
   --title-slide-text-color: #000000;
   --header-background-color: #7b8e1f;
@@ -118,9 +118,10 @@ a, a > code {
 }
 .footnote {
   position: absolute;
-  bottom: 60px;
+  color: black;
+  bottom: 40px;
   padding-right: 4em;
-  font-size: 0.9em;
+  font-size: 0.7em;
 }
 .remark-code-line-highlighted {
   background-color: var(--code-highlight-color);
