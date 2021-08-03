@@ -46,7 +46,7 @@ library(fontawesome)
 
 style_duo_accent(
   primary_color = "#7b8e1f",
-  secondary_color = "white",
+  secondary_color = "#fcab01",
   inverse_header_color = "#290502", 
   link_color = "darkmagenta",
   code_highlight_color = "#add8e6", 
